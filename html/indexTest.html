@@ -302,7 +302,7 @@ background-color: #004085;
 
     <div class="col-8">
 		<div id="floating-panel">
-			<select id="address" onchange= "initMap(this.value);">
+			<select id="address" >
         <option value="Dallas">Dallas</option>
 				<option value="Collin">Collin</option>
 				<!-- <option value="denton">denton</option> -->
@@ -578,7 +578,13 @@ background-color: #004085;
 </select>
     <!-- <input id="submit" type="button" value="Search"> -->
   </div>
-    <div id="map"></div>
+    <!--div id="map"></div-->
+    <section id="map">
+        <svg version="1.1"
+                baseprofile="full"
+                xmlns="http://www.w3.org/2000/svg">
+        </svg>
+    </section>
 </div>
 
  <div class="col-2 " id = "rightc">  <ul class="nav flex-column">
@@ -608,10 +614,8 @@ background-color: #004085;
    </tr>
  </table>
  <br>
- <!-- <a href="CovidDataSets.zip" class="btn btn-primary btn-primary"><i class="fa fa-download" aria-hidden="true"></i>
-  Download Datasets</a> -->
-  <a href="https://docs.google.com/forms/d/1spIKOHbtweAiIUJnZuUxB5TcIFQXnqbvKFpwOCL4N1c/edit" class="btn btn-primary btn-primary"><i aria-hidden="true"></i>
-   Feedback</a>
+ <a href="CovidDataSets.zip" class="btn btn-primary btn-primary"><i class="fa fa-download" aria-hidden="true"></i>
+  Download Datasets</a>
   </li>
 </ul>    </div>
 </div>
@@ -1778,7 +1782,7 @@ fetch('/api/about', {method: "POST",headers: {'Content-Type': 'application/json'
             '</div>'+
             '</div>';
         var marker;
-        var map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById('map1'), {
         //  center: {lat: 40.674, lng: -73.945},
          center: {lat: 32.7767, lng: -96.7970},//31.9686° N, 99.9018° W
           zoom: 10,
@@ -3046,9 +3050,11 @@ function compare_county_deaths(placeValue,placeValue2){
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
     <script type="text/javascript"></script>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWhzcS0fRqtT4czOHzFBfbw4PqiIhnk4&callback=initMap" async defer></script>
-   <div id="sfcltxq4yd9h367xmhk1llc83nhux222s6s"></div>
-   <script type="text/javascript" src="https://counter3.stat.ovh/private/counter.js?c=ltxq4yd9h367xmhk1llc83nhux222s6s&down=async" async></script>
-   <br><a href="https://www.freecounterstat.com"></a><noscript><a href="https://www.freecounterstat.com" title=""><img src="https://counter3.stat.ovh/private/freecounterstat.php?c=ltxq4yd9h367xmhk1llc83nhux222s6s" border="0" title="" alt=""></a></noscript>
-
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.js"></script>
+   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+   <script src="./js/states.js"></script>
+   <script src="./js/index.js"></script>
 </body>
 </htmL>
